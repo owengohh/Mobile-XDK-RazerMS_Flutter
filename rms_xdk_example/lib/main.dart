@@ -53,7 +53,7 @@ class _MyAppState extends State<MyApp> {
                     'mp_channel': 'multi', // Use 'multi' for all available channels option. For individual channel seletion, please refer to "Channel Parameter" in "Channel Lists" in the MOLPay API Spec for Merchant pdf.
                     'mp_bill_description': 'description',
                     'mp_bill_name': 'name',
-                    'mp_bill_email': 'example@mail.com',
+                    'mp_bill_email': 'example@mail.com'!,
                     'mp_bill_mobile': '+60123456789',
                     // 'mp_channel_editing': true, // Option to allow channel selection.
                     //'mp_editing_enabled': true, // Option to allow billing information editing.
@@ -94,8 +94,8 @@ class _MyAppState extends State<MyApp> {
                     // 'mp_dev_mode' : true
                   };
 
-                  String result = await MobileXDK.start(paymentDetails);
-                  print("Result" + result);
+                  String? result = await MobileXDK.start(paymentDetails);
+                  print("Result" + String.fromCharCodes(result!.codeUnits));
                 },
               ),
             ],
